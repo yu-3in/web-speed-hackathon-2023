@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import type { FC } from 'react';
 import { memo } from 'react';
 
@@ -12,20 +11,20 @@ type Props = {
 };
 
 export const ProductList: FC<Props> = memo(({ featureSection }) => {
-  return (
-    <GetDeviceType>
-      {({ deviceType }) => {
-        switch (deviceType) {
-          case DeviceType.DESKTOP: {
-            return <ProductListSlider featureSection={featureSection} />;
-          }
-          case DeviceType.MOBILE: {
-            return <ProductGridList featureSection={featureSection} />;
-          }
-        }
-      }}
-    </GetDeviceType>
-  );
-}, _.isEqual);
+		return (
+			<GetDeviceType>
+				{({ deviceType }) => {
+					switch (deviceType) {
+						case DeviceType.DESKTOP: {
+							return <ProductListSlider featureSection={featureSection} />;
+						}
+						case DeviceType.MOBILE: {
+							return <ProductGridList featureSection={featureSection} />;
+						}
+					}
+				}}
+			</GetDeviceType>
+		);
+	});
 
 ProductList.displayName = 'ProductList';
